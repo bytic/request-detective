@@ -38,7 +38,7 @@ class BasicUri
      * @param Request $request
      * @return string
      */
-    public function getPathFromRequest($request)
+    static public function getPathFromRequest($request)
     {
         $pattern = trim($request->getPathInfo(), '/');
         return $pattern == '' ? '/' : '/' . $pattern;
