@@ -8,16 +8,15 @@
     }
   ],
   "autoload": {
-    "classmap": [
-      "src"
-    ]
+      "psr-4": {
+        "ByTIC\\RequestDetective\\": "src/"
+      }
   },
   "require": {
     "php": ">=5.5.0",
     "symfony/http-foundation": "3.1.*"
   },
   "require-dev": {
-    "codeception/codeception": "2.2.*",
-    "codeception/mockery-module": "0.2.*"
+    "phpunit/phpunit": "5.7.*"
   }
 }

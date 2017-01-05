@@ -1,0 +1,16 @@
+<phpunit bootstrap="test/bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnError="false"
+         stopOnFailure="false"
+         syntaxCheck="true"
+         verbose="true"
+>
+    <testsuites>
+        <testsuite name="Source">
+            <directory>tests/src/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
