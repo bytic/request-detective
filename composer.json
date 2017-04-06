@@ -1,6 +1,12 @@
 {
-  "name": "ByTIC/RequestDetective",
+  "name": "bytic/request-detective",
+  "type": "library",
   "description": "Detect common bot or malicious requests",
+  "keywords": [
+    "request"
+  ],
+  "homepage": "https://github.com/ByTIC/request-detective",
+  "license": "MIT",
   "authors": [
     {
       "name": "Gabriel Solomon",
@@ -8,16 +14,15 @@
     }
   ],
   "autoload": {
-    "classmap": [
-      "src"
-    ]
+      "psr-4": {
+        "ByTIC\\RequestDetective\\": "src/"
+      }
   },
   "require": {
-    "php": ">=5.5.0",
-    "symfony/http-foundation": "3.1.*"
+    "php": "^5.6",
+    "symfony/http-foundation": "^3.1"
   },
   "require-dev": {
-    "codeception/codeception": "2.2.*",
-    "codeception/mockery-module": "0.2.*"
+    "phpunit/phpunit": "^5.7"
   }
 }

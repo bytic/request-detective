@@ -29,7 +29,7 @@ class BasicUri
      */
     static public function getMaliciousUriArray()
     {
-        return self::getGenericList() + self::getWordpressList();
+        return array_merge(self::getGenericList(), self::getWordpressList());
     }
 
     /**
@@ -38,9 +38,9 @@ class BasicUri
      * @param Request $request
      * @return string
      */
-    public function getPathFromRequest($request)
+    static public function getPathFromRequest($request)
     {
-        $pattern = trim($request->getPathInfo(), '/');
+        $pattern = ltrim($request->getPathInfo(), '/');
         return $pattern == '' ? '/' : '/' . $pattern;
     }
 
