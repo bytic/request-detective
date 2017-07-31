@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
  * Class RequestDetectiveTest
  * @package ByTIC\RequestDetective\Tests
  */
-class RequestDetectiveTest extends \PHPUnit_Framework_TestCase
+class RequestDetectiveTest extends AbstractTest
 {
 
     public function testIsMalicious()

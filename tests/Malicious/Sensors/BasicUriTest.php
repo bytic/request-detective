@@ -3,13 +3,14 @@
 namespace ByTIC\RequestDetective\Tests\Malicious\Sensors;
 
 use ByTIC\RequestDetective\Malicious\Sensors\BasicUri;
+use ByTIC\RequestDetective\Tests\AbstractTest;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class BasicUriTest
  * @package ByTIC\RequestDetective\Tests\Malicious\Sensors
  */
-class BasicUriTest extends \PHPUnit_Framework_TestCase
+class BasicUriTest extends AbstractTest
 {
     public function testGetMaliciousUriArray()
     {
