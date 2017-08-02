@@ -16,7 +16,7 @@ class RequestDetective
      * @param Request $request
      * @return bool
      */
-    static public function isMalicious($request)
+    public static function isMalicious($request)
     {
         return MaliciousDetective::check($request);
     }

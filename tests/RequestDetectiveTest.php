@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class RequestDetectiveTest extends AbstractTest
 {
-
     public function testIsMalicious()
     {
         $request = Request::create('/wp-admin/');
@@ -20,5 +19,4 @@ class RequestDetectiveTest extends AbstractTest
         $request = Request::create('/controller/action');
         static::assertFalse(RequestDetective::isMalicious($request));
     }
-
 }

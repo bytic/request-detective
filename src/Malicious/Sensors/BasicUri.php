@@ -14,20 +14,19 @@ class BasicUri
      * @param Request $request
      * @return bool
      */
-    static public function check($request)
+    public static function check($request)
     {
         $uri = self::getPathFromRequest($request);
         if (in_array($uri, self::getMaliciousUriArray())) {
             return true;
         }
         return false;
-
     }
 
     /**
      * @return array
      */
-    static public function getMaliciousUriArray()
+    public static function getMaliciousUriArray()
     {
         return array_merge(self::getGenericList(), self::getWordpressList());
     }
@@ -38,7 +37,7 @@ class BasicUri
      * @param Request $request
      * @return string
      */
-    static public function getPathFromRequest($request)
+    public static function getPathFromRequest($request)
     {
         $pattern = ltrim($request->getPathInfo(), '/');
         return $pattern == '' ? '/' : '/' . $pattern;
@@ -47,7 +46,7 @@ class BasicUri
     /**
      * @return array
      */
-    static public function getWordpressList()
+    public static function getWordpressList()
     {
         return [
             '/wp-login.php',
@@ -64,7 +63,7 @@ class BasicUri
     /**
      * @return array
      */
-    static public function getGenericList()
+    public static function getGenericList()
     {
         return [
             '/openserver/',
