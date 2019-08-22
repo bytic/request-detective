@@ -28,7 +28,7 @@ class BasicUri
      */
     public static function getMaliciousUriArray()
     {
-        return array_merge(self::getGenericList(), self::getWordpressList());
+        return array_merge(self::getGenericList(), self::getWordpressList(), self::getEditorsList());
     }
 
     /**
@@ -54,6 +54,7 @@ class BasicUri
             '/xmlrpc.php',
             '/old/wp-admin/',
             '/wp/wp-admin/',
+            '/wordpress/',
             '/wordpress/wp-admin/',
             '/blog/wp-admin/',
             '/test/wp-admin/',
@@ -71,6 +72,17 @@ class BasicUri
             '/webdav/',
             '/license.txt',
             '/hetlerx.php',
+            '/ads.txt',
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function getEditorsList()
+    {
+        return [
+            '/FCKeditor/editor/filemanager/connectors/asp/connector.asp',
         ];
     }
 }
