@@ -73,6 +73,10 @@ class BasicUri
             '/license.txt',
             '/hetlerx.php',
             '/ads.txt',
+            '/data/admin/allowurl.txt',
+            '/latest/dynamic/instance-identity/document',
+            '/e/admin/index.php',
+            '/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php',
         ];
     }
 
@@ -83,6 +87,8 @@ class BasicUri
     {
         return [
             '/FCKeditor/editor/filemanager/connectors/asp/connector.asp',
+            '/vbulletin/ajax/render/widget_tabbedcontainer_tab_panel',
+            '/ajax/render/widget_tabbedcontainer_tab_panel',
         ];
     }
 }
