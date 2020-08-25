@@ -70,6 +70,7 @@ class BasicUri
             '/openserver/',
             '/recordings/LICENSE.txt',
             '/webdav/',
+            '/phpMyAdmin/',
             '/license.txt',
             '/hetlerx.php',
             '/ads.txt',
