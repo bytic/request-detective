@@ -17,8 +17,12 @@ class BasicUri
     public static function check($request)
     {
         $uri = self::getPathFromRequest($request);
-        if (in_array($uri, self::getMaliciousUriArray())) {
-            return true;
+        $maliciousUris = self::getMaliciousUriArray();
+
+        foreach ($maliciousUris as $maliciousUri) {
+            if (strpos($uri, $maliciousUri) === 0) {
+                return true;
+            }
         }
         return false;
     }
@@ -51,6 +55,7 @@ class BasicUri
         return [
             '/wp-login.php',
             '/wp-admin/',
+            '/wp-content/plugins/',
             '/xmlrpc.php',
             '/old/wp-admin/',
             '/wp/wp-admin/',

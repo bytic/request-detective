@@ -12,6 +12,15 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class BasicUriTest extends AbstractTest
 {
+    public function test_check()
+    {
+        $request = Request::create('/wp-admin/test');
+        self::assertTrue(BasicUri::check($request));
+
+        $request = Request::create('/my/url');
+        self::assertFalse(BasicUri::check($request));
+    }
+
     public function testGetMaliciousUriArray()
     {
         self::assertGreaterThanOrEqual(10, count(BasicUri::getMaliciousUriArray()));

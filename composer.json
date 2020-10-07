@@ -18,6 +18,11 @@
         "ByTIC\\RequestDetective\\": "src/"
       }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "ByTIC\\RequestDetective\\Tests\\": "tests/src"
+    }
+  },
   "require": {
     "php": "^7.0",
     "symfony/http-foundation": "^3.1|^4.1"

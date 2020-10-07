@@ -13,13 +13,12 @@
          failOnWarning="true"
          stopOnError="false"
          stopOnFailure="false"
-         syntaxCheck="true"
          verbose="true"
 >
 
     <testsuites>
         <testsuite name="ByTIC Framework Test Suite">
-            <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Test.php">./tests/src</directory>
         </testsuite>
     </testsuites>
 
