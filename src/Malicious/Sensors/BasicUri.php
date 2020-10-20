@@ -53,16 +53,15 @@ class BasicUri
     public static function getWordpressList()
     {
         return [
-            '/wp-login.php',
-            '/wp-admin/',
-            '/wp-content/plugins/',
             '/xmlrpc.php',
-            '/old/wp-admin/',
-            '/wp/wp-admin/',
-            '/wordpress/',
-            '/wordpress/wp-admin/',
-            '/blog/wp-admin/',
-            '/test/wp-admin/',
+            '/wp-login.php',
+            '/wp-admin',
+            '/wp-content/plugins',
+            '/old/wp-admin',
+            '/wp/wp-admin',
+            '/wordpress',
+            '/blog/wp-admin',
+            '/test/wp-admin',
         ];
     }
 
@@ -72,17 +71,17 @@ class BasicUri
     public static function getGenericList()
     {
         return [
-            '/openserver/',
-            '/recordings/LICENSE.txt',
-            '/webdav/',
-            '/phpMyAdmin/',
+            '/openserver',
+            '/recordings',
+            '/webdav',
+            '/phpMyAdmin',
             '/license.txt',
             '/hetlerx.php',
             '/ads.txt',
             '/data/admin/allowurl.txt',
             '/latest/dynamic/instance-identity/document',
             '/e/admin/index.php',
-            '/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php',
+            '/vendor/phpunit/phpunit',
         ];
     }
 
@@ -92,8 +91,8 @@ class BasicUri
     public static function getEditorsList()
     {
         return [
-            '/FCKeditor/editor/filemanager/connectors/asp/connector.asp',
-            '/vbulletin/ajax/render/widget_tabbedcontainer_tab_panel',
+            '/FCKeditor/editor/filemanager',
+            '/vbulletin/ajax/render',
             '/ajax/render/widget_tabbedcontainer_tab_panel',
         ];
     }
