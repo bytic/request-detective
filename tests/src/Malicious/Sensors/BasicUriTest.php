@@ -12,13 +12,22 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class BasicUriTest extends AbstractTest
 {
-    public function test_check()
+    /**
+     * @dataProvider data_check
+     */
+    public function test_check($uri, $result)
     {
-        $request = Request::create('/wp-admin/test');
-        self::assertTrue(BasicUri::check($request));
+        $request = Request::create($uri);
+        self::assertSame($result, BasicUri::check($request));
+    }
 
-        $request = Request::create('/my/url');
-        self::assertFalse(BasicUri::check($request));
+    public function data_check(): array
+    {
+        return [
+            ['/wp-admin/test', true],
+            ['/web/wp-includes/wlwmanifest.xml', true],
+            ['/my/url', false],
+        ];
     }
 
     public function testGetMaliciousUriArray()

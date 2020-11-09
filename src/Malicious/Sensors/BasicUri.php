@@ -17,10 +17,15 @@ class BasicUri
     public static function check($request)
     {
         $uri = self::getPathFromRequest($request);
+        $uriLen = strlen($uri);
         $maliciousUris = self::getMaliciousUriArray();
 
         foreach ($maliciousUris as $maliciousUri) {
-            if (strpos($uri, $maliciousUri) === 0) {
+            $pos = strpos($uri, $maliciousUri);
+            if ($pos === 0) {
+                return true;
+            }
+            if ($pos > 0 && $pos== ($uriLen-strlen($maliciousUri)) )  {
                 return true;
             }
         }
@@ -60,6 +65,7 @@ class BasicUri
             '/old/wp-admin',
             '/wp/wp-admin',
             '/wordpress',
+            '/wlwmanifest.xml',
             '/blog/wp-admin',
             '/test/wp-admin',
         ];
