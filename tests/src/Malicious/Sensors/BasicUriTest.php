@@ -26,6 +26,8 @@ class BasicUriTest extends AbstractTest
         return [
             ['/wp-admin/test', true],
             ['/web/wp-includes/wlwmanifest.xml', true],
+            ['/vendor/composer', true],
+            ['/vendor/composer/installed.json', true],
             ['/my/url', false],
         ];
     }

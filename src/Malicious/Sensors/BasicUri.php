@@ -35,7 +35,7 @@ class BasicUri
     /**
      * @return array
      */
-    public static function getMaliciousUriArray()
+    public static function getMaliciousUriArray(): array
     {
         return array_merge(self::getGenericList(), self::getWordpressList(), self::getEditorsList());
     }
@@ -46,7 +46,7 @@ class BasicUri
      * @param Request $request
      * @return string
      */
-    public static function getPathFromRequest($request)
+    public static function getPathFromRequest($request): string
     {
         $pattern = ltrim($request->getPathInfo(), '/');
         return $pattern == '' ? '/' : '/' . $pattern;
@@ -55,26 +55,27 @@ class BasicUri
     /**
      * @return array
      */
-    public static function getWordpressList()
+    public static function getWordpressList(): array
     {
         return [
-            '/xmlrpc.php',
-            '/wp-login.php',
             '/wp-admin',
-            '/wp-content/plugins',
             '/old/wp-admin',
             '/wp/wp-admin',
-            '/wordpress',
-            '/wlwmanifest.xml',
             '/blog/wp-admin',
             '/test/wp-admin',
+            '/wp-includes',
+            '/wp-content',
+            '/xmlrpc.php',
+            '/wp-login.php',
+            '/wordpress',
+            '/wlwmanifest.xml',
         ];
     }
 
     /**
      * @return array
      */
-    public static function getGenericList()
+    public static function getGenericList(): array
     {
         return [
             '/openserver',
@@ -84,20 +85,21 @@ class BasicUri
             '/license.txt',
             '/hetlerx.php',
             '/ads.txt',
-            '/data/admin/allowurl.txt',
-            '/latest/dynamic/instance-identity/document',
-            '/e/admin/index.php',
-            '/vendor/phpunit/phpunit',
+            '/data/admin',
+            '/latest/dynamic',
+            '/e/admin',
+            '/vendor/composer',
+            '/vendor/phpunit',
         ];
     }
 
     /**
      * @return array
      */
-    public static function getEditorsList()
+    public static function getEditorsList(): array
     {
         return [
-            '/FCKeditor/editor/filemanager',
+            '/FCKeditor/editor',
             '/vbulletin/ajax/render',
             '/ajax/render/widget_tabbedcontainer_tab_panel',
         ];
