@@ -37,7 +37,7 @@ class BasicUri
      */
     public static function getMaliciousUriArray(): array
     {
-        return array_merge(self::getGenericList(), self::getWordpressList(), self::getEditorsList());
+        return array_merge(self::getGenericList(), self::getWordpressList(), self::getEditorsList(), self::getWaletsList());
     }
 
     /**
@@ -102,6 +102,18 @@ class BasicUri
             '/FCKeditor/editor',
             '/vbulletin/ajax/render',
             '/ajax/render/widget_tabbedcontainer_tab_panel',
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function getWaletsList(): array
+    {
+        return [
+            '/index.php/bitcoin/wallet.dat',
+            '/index.php/backup/wallet.dat',
+            '/index.php/bitcoin/backup/wallet.dat',
         ];
     }
 }
