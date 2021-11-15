@@ -16,7 +16,7 @@ class BasicUri
      */
     public static function check($request)
     {
-        $uri = self::getPathFromRequest($request);
+        $uri = strtolower(self::getPathFromRequest($request));
         $uriLen = strlen($uri);
         $maliciousUris = self::getMaliciousUriArray();
 
@@ -37,7 +37,13 @@ class BasicUri
      */
     public static function getMaliciousUriArray(): array
     {
-        return array_merge(self::getGenericList(), self::getWordpressList(), self::getEditorsList(), self::getWaletsList());
+        return array_merge(
+            self::getGenericList(),
+            self::getWordpressList(),
+            self::getEditorsList(),
+            self::getLoginList(),
+            self::getWaletsList()
+        );
     }
 
     /**
@@ -58,6 +64,8 @@ class BasicUri
     public static function getWordpressList(): array
     {
         return [
+            '/wp',
+            '/wordpress',
             '/wp-admin',
             '/old/wp-admin',
             '/wp/wp-admin',
@@ -66,6 +74,7 @@ class BasicUri
             '/wp-includes',
             '/wp-content',
             '/xmlrpc.php',
+            '/xmlrp.php',
             '/wp-login.php',
             '/wordpress',
             '/wlwmanifest.xml',
@@ -78,10 +87,12 @@ class BasicUri
     public static function getGenericList(): array
     {
         return [
+            '/upload.php',
+            '/config.php',
             '/openserver',
             '/recordings',
             '/webdav',
-            '/phpMyAdmin',
+            '/phpmyadmin',
             '/license.txt',
             '/hetlerx.php',
             '/ads.txt',
@@ -99,7 +110,7 @@ class BasicUri
     public static function getEditorsList(): array
     {
         return [
-            '/FCKeditor/editor',
+            '/fckeditor/editor',
             '/vbulletin/ajax/render',
             '/ajax/render/widget_tabbedcontainer_tab_panel',
         ];
@@ -114,6 +125,15 @@ class BasicUri
             '/index.php/bitcoin/wallet.dat',
             '/index.php/backup/wallet.dat',
             '/index.php/bitcoin/backup/wallet.dat',
+        ];
+    }
+
+    public static function getLoginList(): array
+    {
+        return [
+            '/sitecore/shell/clientbin/reporting/report.ashx',
+            '/telerik.web.ui.webresource.axd',
+            '/owa/auth/logon.aspx',
         ];
     }
 }
