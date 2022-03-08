@@ -65,6 +65,7 @@ class BasicUri
     {
         return [
             '/wp',
+            '/wp.php',
             '/wordpress',
             '/wp-admin',
             '/old/wp-admin',
@@ -88,17 +89,24 @@ class BasicUri
     {
         return [
             '/upload.php',
+            '/defau1t.php',
+            '/new.php',
+            '/xox.php',
             '/config.php',
             '/openserver',
             '/recordings',
             '/webdav',
             '/phpmyadmin',
+            '/wikindex.php',
             '/license.txt',
             '/hetlerx.php',
             '/ads.txt',
             '/data/admin',
             '/latest/dynamic',
             '/e/admin',
+            '/.fk.php',
+            '/f.php',
+            '/4price.php',
             '/vendor/composer',
             '/vendor/phpunit',
         ];
