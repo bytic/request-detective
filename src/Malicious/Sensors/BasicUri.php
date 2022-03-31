@@ -89,9 +89,14 @@ class BasicUri
     {
         return [
             '/upload.php',
+            '/admin.php',
             '/defau1t.php',
             '/new.php',
             '/xox.php',
+            '/xleet.php',
+            '/xleet-shell.php',
+            '/mini.php',
+            '/ups.php',
             '/config.php',
             '/openserver',
             '/recordings',
@@ -106,9 +111,11 @@ class BasicUri
             '/e/admin',
             '/.fk.php',
             '/f.php',
+            '/ffAA531.php',
             '/4price.php',
             '/vendor/composer',
             '/vendor/phpunit',
+            '/old-index.php',
         ];
     }
 
