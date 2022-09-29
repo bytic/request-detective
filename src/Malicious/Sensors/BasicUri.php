@@ -116,6 +116,7 @@ class BasicUri
             '/vendor/composer',
             '/vendor/phpunit',
             '/old-index.php',
+            '/.well-known'
         ];
     }
 
