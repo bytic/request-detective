@@ -25,7 +25,7 @@ class BasicUri
             if ($pos === 0) {
                 return true;
             }
-            if ($pos > 0 && $pos== ($uriLen-strlen($maliciousUri)) )  {
+            if ($pos > 0 && $pos == ($uriLen - strlen($maliciousUri))) {
                 return true;
             }
         }
@@ -42,7 +42,8 @@ class BasicUri
             self::getWordpressList(),
             self::getEditorsList(),
             self::getLoginList(),
-            self::getWaletsList()
+            self::getWaletsList(),
+            self::getVendorsList()
         );
     }
 
@@ -79,6 +80,16 @@ class BasicUri
             '/wp-login.php',
             '/wordpress',
             '/wlwmanifest.xml',
+            '/beence.php'
+        ];
+    }
+
+    public static function getVendorsList(): array
+    {
+        return [
+            '/config/aws.yml',
+            '/.well-known',
+            '/.aws'
         ];
     }
 
@@ -116,7 +127,7 @@ class BasicUri
             '/vendor/composer',
             '/vendor/phpunit',
             '/old-index.php',
-            '/.well-known'
+
         ];
     }
 
